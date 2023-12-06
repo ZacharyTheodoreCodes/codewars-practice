@@ -17,14 +17,20 @@ var longestCommonPrefix = function (strs) {
   return prefix;
 };
 
-let strs = ["aabc", "aab", "aabe"];
+let strs = ["flower", "flow", "flight"];
 
 //solution 2
 var longestCommonPrefix2 = function (strs) {
-    /**
-     * 
-     * 
-     */
+  let commonPrefix = "";
+  for (let i = 0; i < strs[0].length; i++) {
+    for (let j = 1; j < strs.length; j++) {
+      if (i >= strs[j].length || strs[0][i] != strs[j][i]) {
+        return commonPrefix;
+      }
+    }
+    commonPrefix += strs[0][i];
+  }
+  return commonPrefix;
 };
 
 console.log(longestCommonPrefix2(strs));
