@@ -22,7 +22,7 @@ var twoSum = function (nums, target) {
 console.log(twoSum(nums, target));
 
 // solution 2
-var twoSum = function (nums, target) {
+var twoSum2 = function (nums, target) {
   let numIndexMap = {};
 
   for (let i = 0; i < nums.length; i++) {
@@ -30,7 +30,7 @@ var twoSum = function (nums, target) {
     let complement = target - nums[i];
     //3
     if (numIndexMap[complement] !== undefined) {
-        //0,1
+      //0,1
       return [numIndexMap[complement], i];
     }
     //3 = 0 , 2 = 1, 4 = 2
