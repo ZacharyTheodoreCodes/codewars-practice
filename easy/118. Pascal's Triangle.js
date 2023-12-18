@@ -1,5 +1,5 @@
 let numRows = 5;
-
+//[ [ 1 ], [ 1, 1 ], [ 1, 2, 1 ], [ 1, 3, 3, 1 ], [ 1, 4, 6, 4, 1 ] ]
 var generate = function (numRows) {
   let result = [];
   for (let i = 0; i < numRows; i++) {
@@ -7,12 +7,14 @@ var generate = function (numRows) {
     row[0] = 1;
     row[row.length - 1] = 1;
 
-    for (let j = 1; j < row.length - 1; j++) {
-      row[j] = result[i - 1][j - 1] + result[i - 1][j];
+    for (let j = 0; j < row.length; j++) {
+      if (row[j] == 0) {
+        row[j] = result[i - 1][j - 1] + result[i - 1][j];
+      }
     }
     result.push(row);
   }
-return result
+  return result;
 };
 
-console.log(generate(numRows));
+console.log(generate(5));

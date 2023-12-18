@@ -1,19 +1,9 @@
 var climbStairs = function (n) {
-  if (n < 2) {
-    return 1;
-  }
-
-  let firstIndex = 1;
-  let secondIndex = 1;
-  let thirdIndex = 0;
+  let arr = [1, 1];
   for (let i = 2; i <= n; i++) {
-  
-    thirdIndex = firstIndex + secondIndex;
-    firstIndex = secondIndex;
-    secondIndex = thirdIndex;
+    arr.push(arr[i - 1] + arr[i - 2]);
   }
-  return thirdIndex;
+  return arr[n];
 };
 
 console.log(climbStairs(5));
-
