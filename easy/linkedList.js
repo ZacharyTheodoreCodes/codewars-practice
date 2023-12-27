@@ -98,12 +98,28 @@ class LinkedList {
 
     this.size--;
   }
+
+  //clear list
+  clearList() {
+    this.head = null;
+    this.size = 0;
+  }
+
+  //print list data
+  printListData() {
+    let current = this.head;
+    while (current) {
+      console.log(current.data);
+      current = current.next;
+    }
+  }
 }
 
 let a1 = new Node(2, 0);
 let ll = new LinkedList();
-// ll.insertFirst(3);
-// ll.insertFirst(4);
-ll.insertLast(5);
+ll.insertFirst(3);
+ll.insertLast(4);
+ll.insertAt(5, 2);
+
 //console.log(ll);
 console.dir(ll, { depth: null });
