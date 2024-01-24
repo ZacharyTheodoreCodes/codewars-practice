@@ -8,13 +8,14 @@ var mySqrt = function (x) {
     } else if (mid * mid < x) {
       left = mid + 1;
     } else {
-      right = mid -1 ;
+      right = mid - 1;
     }
   }
 };
 /**
- * 1 2 3 4 5 6 7 8
+ *
+ *
  *
  */
-let x = 8;
+let x = 1;
 console.log(mySqrt(x));
