@@ -13,8 +13,7 @@ var calPoints = function (operations) {
       arr.pop();
     }
   }
-  let output = 0;
-  for (let num of arr) {
+  let output = 0;4
     output += num;
   }
   return output;
