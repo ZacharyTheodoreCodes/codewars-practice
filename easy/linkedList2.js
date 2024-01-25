@@ -5,6 +5,23 @@ class Node {
   }
 }
 
+function arrayToLinkedList(array) {
+  let head = null;
+  let current = null;
+
+  for (let value of array) {
+    const newNode = new Node(value);
+    if (!head) {
+      head = newNode;
+      current = head;
+    } else {
+      current.next = newNode;
+      current = newNode;
+    }
+  }
+  return head;
+}
+
 class LinkedList {
   constructor() {
     this.head = null;
@@ -99,6 +116,11 @@ ll.insertFirst(2);
 ll.insertFirst(1);
 ll.insertLast(4);
 ll.insertAt(3, 2);
-ll.getAt(1);
+//ll.getAt(1);
 //ll.removeAt(2);
-console.dir(ll, { depth: null });
+
+let array = [1, 2, 3, 4, 5];
+let linkedList = arrayToLinkedList(array);
+console.dir(linkedList, { depth: null });
+
+//console.dir(ll, { depth: null });
