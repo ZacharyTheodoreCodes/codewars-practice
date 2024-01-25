@@ -22,6 +22,21 @@ function arrayToLinkedList(array) {
   return head;
 }
 
+function reverseList(linkedList) {
+  let current = linkedList;
+  let prev = null;
+  let next = null;
+
+  while (current !== null) {
+    next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+
+  return prev;
+}
+
 class LinkedList {
   constructor() {
     this.head = null;
@@ -121,6 +136,7 @@ ll.insertAt(3, 2);
 
 let array = [1, 2, 3, 4, 5];
 let linkedList = arrayToLinkedList(array);
-console.dir(linkedList, { depth: null });
+let reversed = reverseList(linkedList);
+console.dir(reversed, { depth: null });
 
 //console.dir(ll, { depth: null });
