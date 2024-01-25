@@ -1,10 +1,34 @@
-var isPalindrome = function (head) {};
+var isPalindrome = function (head) {
+  let linkedList = arrayToLinkedList(head);
+  let reversed = reverseList(linkedList);
 
+  let currentOriginal = linkedList;
+  let currentReversed = reversed;
+
+  while (currentOriginal !== null && currentReversed !== null) {
+    if (currentOriginal.data !== currentReversed.data) {
+      console.log("Not a palindrome");
+      return false;
+    }
+    currentOriginal = currentOriginal.next;
+    currentReversed = currentReversed.next;
+  }
+
+  console.log("Palindrome");
+  return true;
+};
 function reverseList(linkedList) {
   let current = linkedList;
   let prev = null;
   let next = null;
-  
+
+  while (current !== null) {
+    next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+  return prev;
 }
 
 class Node {
@@ -31,8 +55,10 @@ function arrayToLinkedList(arr) {
 }
 
 let head = [1, 2, 2, 1];
-let linkedList = arrayToLinkedList(head);
-console.dir(linkedList, { depth: null });
+// let ll = arrayToLinkedList(head);
+// console.dir(ll, { depth: null });
+isPalindrome(head);
+console.dir(palindrome, { depth: null });
 
 /**
  * turn array into linked list
