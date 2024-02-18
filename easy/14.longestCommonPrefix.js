@@ -17,7 +17,7 @@ var longestCommonPrefix = function (strs) {
   return prefix;
 };
 
-let strs = ["flower", "flow", "flight"];
+let strs = [ 'aaa', 'aa', 'aaa' ]
 
 //solution 2
 var longestCommonPrefix2 = function (strs) {
@@ -33,4 +33,4 @@ var longestCommonPrefix2 = function (strs) {
   return commonPrefix;
 };
 
-console.log(longestCommonPrefix2(strs));
+console.log(longestCommonPrefix(strs));
