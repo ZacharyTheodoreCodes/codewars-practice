@@ -19,4 +19,3 @@ var strStr = function (haystack, needle) {
   return -1;
 };
 
-console.log(strStr(haystack, needle));
